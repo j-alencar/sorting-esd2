@@ -24,7 +24,6 @@ public class Main {
         long[] times = new long[iteracoes];
 
         StringBuilder result = new StringBuilder();
-        NumberFormat formatter = NumberFormat.getInstance(new Locale("pt", "BR"));
         
         for (int i = 0; i < iteracoes; i++) {
             int[] array = gerador.gerar(tamanho);
@@ -33,7 +32,7 @@ public class Main {
             long endTime = System.nanoTime();
 
             times[i] = endTime - startTime;
-            String linha = tipoSort.getClass().getSimpleName() + ", " + formatter.format(times[i]) + ", " + tamanho
+            String linha = tipoSort.getClass().getSimpleName() + ", " + times[i] + ", " + tamanho
                     + ", " + descricao;
             result.append(linha).append(System.lineSeparator());
         }
